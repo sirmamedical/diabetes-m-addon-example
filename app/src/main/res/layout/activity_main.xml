@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context="com.diabetesm.addons.api.example.MainActivity">
+
+    <Button
+        android:id="@+id/request_read_access"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Request Read Data access"
+        />
+
+    <Button
+        android:id="@+id/request_push_data_access"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Request Push Data access"
+        />
+
+    <Button
+        android:id="@+id/read_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:enabled="false"
+        android:text="Read data"
+        />
+
+    <Button
+        android:id="@+id/push_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:enabled="false"
+        android:text="Push data"
+        />
+
+    <TextView
+        android:id="@+id/diabetes_m_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="no data"
+        />
+</LinearLayout>
