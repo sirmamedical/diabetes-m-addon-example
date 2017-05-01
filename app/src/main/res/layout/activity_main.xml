@@ -15,14 +15,6 @@
         />
 
     <Button
-        android:id="@+id/request_push_data_access"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Request Push Data access"
-        />
-
-    <Button
         android:id="@+id/read_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,12 +24,28 @@
         />
 
     <Button
+        android:id="@+id/request_push_data_access"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Request Push Data access"
+        />
+
+    <Button
         android:id="@+id/push_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:enabled="false"
         android:text="Push data"
+        />
+
+    <Button
+        android:id="@+id/save_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Save data"
         />
 
     <TextView
