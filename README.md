@@ -6,7 +6,7 @@
 This is an example app which demonstrates how to exchange data with Diabetes:M application for Android.
 
 If you need to open the Log Entry form and pass glucose value to save, you don't have to request for any permissions and use the API at all. You simply can pass the intent as shown below:
-```
+```java
 Intent intent = new Intent("com.mydiabetes.action.SAVE_LOG_ENTRY");
 intent.putExtra("DATETIME", System.currentTimeMillis());
 intent.putExtra("GLUCOSE", 8.5f);
@@ -18,7 +18,7 @@ If need to read the configuration and last glucose value and/or push some data s
 The easiest way is to clone this repository and use it as a seed project.
 
 To include the api library you have to add the following lines to your app gradle file:
-```
+```groovy
 dependencies {
     //other dependencies
      
@@ -27,7 +27,7 @@ dependencies {
 }
 ```
 Create instance of DiabetesAppConnection and check for Diabetes:M package status:
-```
+```java
 final DiabetesAppConnection diaConnection = new DiabetesAppConnection(MainActivity.this);
  
 DiabetesAppConnection.DiabetesMCheck checkStatus = diaConnection.checkDiabetesMApp();
@@ -43,12 +43,12 @@ if (checkStatus != DiabetesAppConnection.DiabetesMCheck.OK) {
 }
 ```
 Then request access from Diabetes:M app as shown below:
-```
+```java
 DiabetesAppConnection diaConnection = new DiabetesAppConnection(this);
 diaConnection.requestAccess(this, requestPushDataAccess, ACCESS_REQUEST_CODE);
 ```
 Handle the result in onActivityForResult:
-```
+```java
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
  
@@ -78,7 +78,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 ```
 ## Read configuration data and last glucose value
 If you are granted access permission then the configuration data can be read with:  
-```
+```java
 final DiabetesAppConnection diaConnection = new DiabetesAppConnection(this);
 diaConnection.requestSimpleData(new DiabetesAppConnection.IResultListener() {
     @Override
@@ -122,10 +122,10 @@ To push data silently you must prepare the list with log entries to save. You ma
 * calories taken
 * note
 
-if your LogEntry contains sensor glucose reading then use setSensor(isSensor) to specify this.
+If your LogEntry contains sensor glucose reading then use setSensor(isSensor) to specify this.
 
 In the following code 2 entries are created - one normal glucose check and one sensor glucose check 
-```
+```java
 List<LogEntry> pushData = new ArrayList<>();
  
 //Prepare the first entry at current time
@@ -146,7 +146,7 @@ entry2.setNote("API Example: Pushed sensor glucose!");
 pushData.add(entry2);
 ```
 To push this data we call pushData method from the api instance:
-```
+```java
 //Instantiate DiabetesAppConnection and call pushData
 DiabetesAppConnection diaConnection = new DiabetesAppConnection(this);
 diaConnection.pushData(pushData, new DiabetesAppConnection.IResultListener() {
