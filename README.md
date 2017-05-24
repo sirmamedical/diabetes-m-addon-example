@@ -1,7 +1,4 @@
 # Diabetes:M Add-on example
-
-##### Not ready yet!!! This API is under development and production version of Diabetes:M doesn't support it yet.
-
 ## Introduction
 This is an example app which demonstrates how to exchange data with Diabetes:M application for Android.
 
