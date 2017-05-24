@@ -26,6 +26,14 @@ dependencies {
     compile 'com.diabetesm.addons.api:diabetes_m_addon_api_1.0@aar'
 }
 ```
+Add next lines in your proguard-rules file:
+```
+-keep class com.diabetesm.addons.api.** { *; }
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+```
+
 Create instance of DiabetesAppConnection and check for Diabetes:M package status:
 ```java
 final DiabetesAppConnection diaConnection = new DiabetesAppConnection(MainActivity.this);
