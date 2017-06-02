@@ -109,6 +109,17 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("DATETIME", System.currentTimeMillis());
         intent.putExtra("GLUCOSE", 8.5f);
         //intent.putExtra("ESTIMATED", true);//Use ESTIMATED parameter if this glucose check must not be used for calibration
+
+        intent.putExtra("CARBS", 100f);//float
+        intent.putExtra("PROTEIN", 50f);//float
+        intent.putExtra("FAT", 10f);//float
+        intent.putExtra("CALORIES", 150f);//float
+
+        intent.putExtra("EXERCISE_INDEX", 10);//int
+        intent.putExtra("EXERCISE_DURATION", 60);//int
+        intent.putExtra("EXERCISE_COMMENT", "API EXERCISE");
+
+        intent.putExtra("NOTES", "HELLO FROM API  EXAMPLE");
         startActivity(intent);
     }
 
