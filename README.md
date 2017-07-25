@@ -12,11 +12,15 @@ startActivity(intent);
 ```
 If need to read the configuration and last glucose value and/or push some data silently, then you must use the provided API. 
 ## How to start
-The easiest way is to clone this repository and use it as a seed project.
+The easiest way is to clone this repository and use it as a seed project. 
+
+If you already have an existing project then you must copy the library module located at app/libs/diabetes_m_addon_api_1.0.aar to your project app/libs folder.
 
 To include the api library you have to add the following lines to your app gradle file:
 ```groovy
 dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+ 
     //other dependencies
      
     compile 'com.google.code.gson:gson:2.7'
